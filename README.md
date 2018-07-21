@@ -20,3 +20,8 @@ Pin D3 is used to provide power for the BME module and is only activated when ne
 Please rename the config.cpp.template to config.cpp and set your coresponding credentials and parameters
 
 ## Images
+![Prototype](/images/prototype.jpg)
+
+![18650+Charger](/images/18650+charger.jpg)
+
+![wireing](/images/wireing.jpg)
