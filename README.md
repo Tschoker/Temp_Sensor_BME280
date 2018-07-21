@@ -14,6 +14,7 @@ The solat panel is connected to the charger module inputs with the diode to prot
 Pin D0 is shortened with RST to enable the deepsleep functionality.
 Pin D1, D2 are used to connect SCL and SDA of the BME280 module.
 Pin D3 is used to provide power for the BME module and is only activated when needed.
+![Breadboard](/images/breadboard.PNG)
 
 ## Code
 Please rename the config.cpp.template to config.cpp and set your coresponding credentials and parameters
