@@ -1,0 +1,8 @@
+#define wifi_ssid "SSID"
+#define wifi_password "WiFiPassWord"
+#define mqtt_server "192.168.0.1"
+#define mqtt_user "User"
+#define mqtt_password "PassWord"
+#define humidity_topic "myNodes/Wheather/Humidity"
+#define temperature_topic "myNodes/Wheather/Temperature"
+#define pressure_topic "myNodes/Wheather/Pressure"
