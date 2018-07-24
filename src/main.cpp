@@ -20,6 +20,7 @@ PubSubClient client(espClient);
 float temp = 0.0;
 float hum = 0.0;
 float pressure = 0.0;
+float bat = 0.0;
 bool status;
 
 void setup_wifi() {
@@ -90,6 +91,7 @@ void setup()
   temp=bme.readTemperature();
   pressure=(bme.readPressure()/100.0F);
   hum=bme.readHumidity();
+  bat=analogRead (A0) * 0.0028 * 6;
 
   Serial.println( String(temp).c_str());
   client.publish(temperature_topic, String(temp).c_str(), true);
@@ -97,6 +99,8 @@ void setup()
   client.publish(pressure_topic, String(pressure).c_str(), true);
   Serial.println(String(hum).c_str());
   client.publish(humidity_topic, String(hum).c_str(), true);
+  Serial.println(String(bat).c_str());
+  client.publish(battery_topic, String(bat).c_str(), true);
 
   delay(100);
 
