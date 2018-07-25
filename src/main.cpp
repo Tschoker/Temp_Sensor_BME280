@@ -91,7 +91,7 @@ void setup()
   temp=bme.readTemperature();
   pressure=(bme.readPressure()/100.0F);
   hum=bme.readHumidity();
-  bat=analogRead (A0) * 0.0028 * 6;
+  bat=analogRead (A0) / 1024.0F * 5.03148F; //see README how to calculate your value for 5.03148F
 
   Serial.println( String(temp).c_str());
   client.publish(temperature_topic, String(temp).c_str(), true);
