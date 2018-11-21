@@ -19,7 +19,7 @@ Pin A0 is connected with 200k against VIN (currently not in the pictures) to mea
 (R1+R2+R3)/R3
 If thats not measuring exact enough you can divide the actual Vin by the measured value from ESP and multiply your current value with it. So when your resistor calculation results in 5.123, your ESP measures 4.0 but actually your battery has 4.2 your new factor will be:
 5.123 * 4.2 / 4.0
- 
+
 ![Breadboard](/images/breadboard.PNG)
 
 ## Code
