@@ -91,7 +91,7 @@ void setup()
   temp=bme.readTemperature();
   pressure=(bme.readPressure()/100.0F);
   hum=bme.readHumidity();
-  bat=analogRead (A0) / 1024.0F * 5.03148F; //see README how to calculate your value for 5.03148F
+  //bat=analogRead (A0) / 1024.0F * 5.03148F; //see README how to calculate your value for 5.03148F
 
   Serial.println( String(temp).c_str());
   client.publish(temperature_topic, String(temp).c_str(), true);
@@ -99,8 +99,8 @@ void setup()
   client.publish(pressure_topic, String(pressure).c_str(), true);
   Serial.println(String(hum).c_str());
   client.publish(humidity_topic, String(hum).c_str(), true);
-  Serial.println(String(bat).c_str());
-  client.publish(battery_topic, String(bat).c_str(), true);
+  //Serial.println(String(bat).c_str());
+  //client.publish(battery_topic, String(bat).c_str(), true);
 
   delay(100);
 
@@ -110,7 +110,7 @@ void setup()
 
 
   //go to sleep
-  ESP.deepSleep(60e6);
+  ESP.deepSleep(900e6);
 
 }
 
