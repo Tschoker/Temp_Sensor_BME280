@@ -7,3 +7,4 @@
 #define temperature_topic "myNodes/Wheather/Temperature"
 #define pressure_topic "myNodes/Wheather/Pressure"
 #define battery_topic "myNodes/Wheather/Battery"
+#define will_topic "myNodes/WheatherOutside/Online"

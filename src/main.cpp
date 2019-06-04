@@ -6,7 +6,6 @@
 
 #include <config.cpp>
 
-
 //D0 = Output for RST pin
 //D1 = I2C CLK
 //D2 = I2C SDA
@@ -45,8 +44,10 @@ void reconnect() {
  while (!client.connected()) {
   Serial.print("Attempting MQTT connection...");
   // Attempt to connect
-  if (client.connect("nodemcu", mqtt_user, mqtt_password)) {
+  if (client.connect("nodemcu", mqtt_user, mqtt_password, will_topic, 0, 1, "false")) {
   Serial.println("connected");
+  client.publish(will_topic, "true");
+  delay(10);
   } else {
   Serial.print("failed, rc=");
   Serial.print(client.state());
@@ -108,7 +109,8 @@ void setup()
   //deactivate sensor pwr supply
   digitalWrite(D3,LOW);
 
-
+  client.publish(will_topic, "false", true);
+  delay(1000);
   //go to sleep
   ESP.deepSleep(900e6);
 
