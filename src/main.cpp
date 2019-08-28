@@ -73,7 +73,7 @@ void setup()
   setup_wifi();
 
   //connect MQTT
-  client.setServer(mqtt_server, 18830);
+  client.setServer(mqtt_server, 1883);
   if (!client.connected()) {
    Serial.println("MQTT not connected - trying reconnect!");
    reconnect();
